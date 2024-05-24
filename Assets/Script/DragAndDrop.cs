@@ -14,12 +14,19 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
     private Sprite dragHair,dragHead,standHead, standHair, standEye, dragEye, standEyeWhites, dragEyeWhites, standShirt,
     dragShirt,standUndershirt,dragUndershirt,dragHands,standHands,dragPants,standPants,standShoes,dragShoes;
     private RunningScript runningScript;
+    private RunningScriptHair runningScriptHair;
+    private int selectedHairI=1;
     public float minX, maxX, minY, maxY;
+    
+
+
     void Start()
     {
         rTransform = GetComponent<RectTransform>();
+        changeHair(0);
+
         //Standing Sprites:
-        standHair = standSprite2("Hair","Hair_1");
+        //standHair = standSprite2("Hair","Hair_"+selectedHairI);
         standEye = standSprite("Eyes");
         standEyeWhites = standSprite("Eye_Whites");
         standShirt = standSprite("Shirt");
@@ -30,7 +37,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
         standHead = standSprite("Head");
 
         //Dragging Sprites:
-        dragHair = dragSprite2("Hair","Hair_1");
+        //dragHair = dragSprite2("Hair","Hair_"+selectedHairI);
         dragEye = dragSprite("Eyes");
         dragEyeWhites = dragSprite("Eye_Whites");
         dragShirt = dragSprite("Shirt");
@@ -55,7 +62,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
         Debug.Log(value);
         Shirt.GetComponent<RunningScript>().Enabled = value;
         Head.GetComponent<RunningScript>().Enabled = value;
-        Hair.GetComponent<RunningScript>().Enabled = value;
+        Hair.GetComponent<RunningScriptHair>().Enabled = value;
         Pants.GetComponent<RunningScript>().Enabled = value;
         EyeWhites.GetComponent<RunningScript>().Enabled = value;
         Eye.GetComponent<RunningScript>().Enabled = value;
@@ -172,5 +179,33 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
             }
         }
         return standSpr;
+    }
+    public void changeHair(int index){
+        bool f1=false, f2=false;
+        if (selectedHairI+index<=0 || selectedHairI+index>50){
+
+        }else{
+            selectedHairI+=index;
+            standHair = standSprite2("Hair","Hair_"+selectedHairI);
+            dragHair = dragSprite2("Hair","Hair_"+selectedHairI);
+            /*
+            Debug.Log("CharResources/Hair/Player_Hair_"+selectedHairI+"_0");
+            Sprite[] sprites = Resources.LoadAll<Sprite>("CharResources/Hair/Player_Hair_"+selectedHairI);
+            foreach (Sprite hairSprite in sprites)
+            {
+                if (hairSprite.name == "CharResources/Hair/Player_Hair_"+selectedHairI+"_0")
+                {
+                    standHair = hairSprite;
+                    Hair.GetComponent<Image>().sprite = hairSprite;
+                    f1=true;
+                }else if(hairSprite.name == "CharResources/Hair/Player_Hair_"+selectedHairI+"_5"){
+                    dragHair = hairSprite;
+                    f2=true;
+                }
+                if(f1&&f2)
+                    break;
+            }
+            */
+        }
     }
 }

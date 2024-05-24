@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 479ec18562f2f104a8504e15c9ec69cf
+guid: 4f57f20ff8bccd24b8f100f3a4796f11
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - RoadbrushW01-Condensed
+  - Andy
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

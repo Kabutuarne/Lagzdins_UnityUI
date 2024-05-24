@@ -32,7 +32,6 @@ public class RunningScript : MonoBehaviour
         if (timer >= changeInterval)
         {
             timer = 0f;
-
             currentSpriteIndex++;
 
             if (currentSpriteIndex >= sprites.Length)
