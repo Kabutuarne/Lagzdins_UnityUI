@@ -16,17 +16,25 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
     private RunningScript runningScript;
     private RunningScriptHair runningScriptHair;
     private int selectedHairI=1;
+    public int SelectedHairI{
+        set{selectedHairI=value;}
+        get{return selectedHairI;}
+    }
+    public GameObject OtherScriptHolder;
+
+
     public float minX, maxX, minY, maxY;
-    
+    public GameObject hairChoiceLeft,hairChoiceMiddle,hairChoiceRight; 
+    public Sprite disabledButton;
 
 
     void Start()
     {
         rTransform = GetComponent<RectTransform>();
-        changeHair(0);
+        //changeHair(0);
 
         //Standing Sprites:
-        //standHair = standSprite2("Hair","Hair_"+selectedHairI);
+        standHair = standSprite2("Hair","Hair_"+selectedHairI);
         standEye = standSprite("Eyes");
         standEyeWhites = standSprite("Eye_Whites");
         standShirt = standSprite("Shirt");
@@ -37,7 +45,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
         standHead = standSprite("Head");
 
         //Dragging Sprites:
-        //dragHair = dragSprite2("Hair","Hair_"+selectedHairI);
+        dragHair = dragSprite2("Hair","Hair_"+selectedHairI);
         dragEye = dragSprite("Eyes");
         dragEyeWhites = dragSprite("Eye_Whites");
         dragShirt = dragSprite("Shirt");
@@ -46,23 +54,29 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
         dragPants = dragSprite("Pants");
         dragShoes = dragSprite("Shoes");
         dragHead = dragSprite("Head");
+        enableAnimation(false);
     }
 
     public void OnPointerDown(PointerEventData data)
     {
-        
-        Debug.Log("Izdarīts klikšis uz velkama objekta!");
+        updateHair();
+        //Debug.Log("Izdarīts klikšis uz velkama objekta!");
     }
 
     public void OnBeginDrag(PointerEventData data)
-    {
-        Debug.Log("Uzsākta vilkšana!");
+    {   
+        //selectedHair = OtherScriptHolder.GetComponent<Image>().SelectedHairIndex;
+        Hair.GetComponent<RunningScriptHair>().Spritez = 0;
+        Debug.Log(selectedHairI+"testtt");
     }
     public void enableAnimation(bool value){
-        Debug.Log(value);
+        //Debug.Log(value);
+        updateHair();
         Shirt.GetComponent<RunningScript>().Enabled = value;
         Head.GetComponent<RunningScript>().Enabled = value;
+
         Hair.GetComponent<RunningScriptHair>().Enabled = value;
+        Hair.GetComponent<RunningScriptHair>().Spritez = 0;
         Pants.GetComponent<RunningScript>().Enabled = value;
         EyeWhites.GetComponent<RunningScript>().Enabled = value;
         Eye.GetComponent<RunningScript>().Enabled = value;
@@ -71,6 +85,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
         Shoes.GetComponent<RunningScript>().Enabled = value;
 
         if(value==false){
+            //Debug.Log(selectedHairI);
             
             Shirt.GetComponent<Image>().sprite = standShirt;
             Head.GetComponent<Image>().sprite = standHead;
@@ -86,7 +101,9 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
     public void OnDrag(PointerEventData data)
     {
         enableAnimation(false);
+        updateHair();
         Shirt.GetComponent<Image>().sprite = dragShirt;
+        
         Head.GetComponent<Image>().sprite = dragHead;
         Hair.GetComponent<Image>().sprite = dragHair;
         Pants.GetComponent<Image>().sprite = dragPants;
@@ -109,7 +126,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
 
         rTransform.position = mousePosition;
 
-        Debug.Log("x=" + mousePosition.x + " un y=" + mousePosition.y);
+        //Debug.Log("x=" + mousePosition.x + " un y=" + mousePosition.y);
     }
 
 
@@ -126,7 +143,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
             Hands.GetComponent<Image>().sprite = standHands;
             Shoes.GetComponent<Image>().sprite = standShoes;
             enableAnimation(ToggleButton.isOn);
-        Debug.Log("Objekts atlaists, vilkšana pārtraukta!");
+        //Debug.Log("Objekts atlaists, vilkšana pārtraukta!");
     }
     private Sprite dragSprite(string component){
         Sprite[] sprites = Resources.LoadAll<Sprite>("CharResources/"+component+"/Player_"+component);
@@ -181,31 +198,38 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
         return standSpr;
     }
     public void changeHair(int index){
-        bool f1=false, f2=false;
         if (selectedHairI+index<=0 || selectedHairI+index>50){
 
         }else{
             selectedHairI+=index;
+            updateHairButtons();
+            
+        }   
+    }
+    public void updateHairButtons(){
+            enableAnimation(false);
             standHair = standSprite2("Hair","Hair_"+selectedHairI);
             dragHair = dragSprite2("Hair","Hair_"+selectedHairI);
-            /*
-            Debug.Log("CharResources/Hair/Player_Hair_"+selectedHairI+"_0");
-            Sprite[] sprites = Resources.LoadAll<Sprite>("CharResources/Hair/Player_Hair_"+selectedHairI);
-            foreach (Sprite hairSprite in sprites)
-            {
-                if (hairSprite.name == "CharResources/Hair/Player_Hair_"+selectedHairI+"_0")
-                {
-                    standHair = hairSprite;
-                    Hair.GetComponent<Image>().sprite = hairSprite;
-                    f1=true;
-                }else if(hairSprite.name == "CharResources/Hair/Player_Hair_"+selectedHairI+"_5"){
-                    dragHair = hairSprite;
-                    f2=true;
-                }
-                if(f1&&f2)
-                    break;
+            if(selectedHairI>1){
+            hairChoiceLeft.GetComponent<Image>().sprite = standSprite2("Hair","Hair_"+(selectedHairI-1));
             }
-            */
-        }
+            else
+            hairChoiceLeft.GetComponent<Image>().sprite = disabledButton;
+            
+            hairChoiceMiddle.GetComponent<Image>().sprite = standHair;
+            
+            if(selectedHairI<50){
+            hairChoiceRight.GetComponent<Image>().sprite = standSprite2("Hair","Hair_"+(selectedHairI+1));
+            }
+            else
+            hairChoiceRight.GetComponent<Image>().sprite = disabledButton;
+
+            Hair.GetComponent<RunningScriptHair>().HairIndex = selectedHairI;
+            enableAnimation(ToggleButton.isOn);
+    }
+    public void updateHair(){
+            standHair = standSprite2("Hair","Hair_"+selectedHairI);
+            dragHair = dragSprite2("Hair","Hair_"+selectedHairI);
+            Hair.GetComponent<RunningScriptHair>().HairIndex = selectedHairI;
     }
 }

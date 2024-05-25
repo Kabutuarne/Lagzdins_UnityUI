@@ -121,7 +121,280 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Player_Hair_22_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 726
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e337cee22afa404eb05829dcd8d4d94
+      internalID: 736386160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Hair_22_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 670
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ab32b1445d6910499b4c66d1c6e01ea
+      internalID: 1522313860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Hair_22_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 614
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3b34afc4496394409b7a0b821f05fdc
+      internalID: -994085520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Hair_22_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 558
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a73baea9599fc94f8689fcdf13e3ebc
+      internalID: 773747517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Hair_22_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 502
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54d159c848216845b12d31724b06dfe
+      internalID: 1653487136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Hair_22_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 446
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a816507710e6bad418292511b965455a
+      internalID: -354559115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Hair_22_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 390
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c84a2ea87ca627e458a8e16261a9d8b5
+      internalID: 466363972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Hair_22_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 334
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eca86006cb845e4da0cfa8aff6fad2f
+      internalID: 1128234148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Hair_22_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 278
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3ef6420cc11a844585e55c4e9924f9c
+      internalID: 382202484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Hair_22_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 222
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e80302c51d31dc4ca26964a58022ac4
+      internalID: 1009590795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Hair_22_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 166
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd67a0b7a5968604ab2a0deadd1ee681
+      internalID: -1627544124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Hair_22_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 110
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8537c0c07ad44df4fb848f1865bae996
+      internalID: -2015388374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Hair_22_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 54
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa11836d60648ca47a147d0aff2dfcb8
+      internalID: 435793585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +405,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Player_Hair_22_0: 736386160
+      Player_Hair_22_1: 1522313860
+      Player_Hair_22_10: -1627544124
+      Player_Hair_22_11: -2015388374
+      Player_Hair_22_12: 435793585
+      Player_Hair_22_2: -994085520
+      Player_Hair_22_3: 773747517
+      Player_Hair_22_4: 1653487136
+      Player_Hair_22_5: -354559115
+      Player_Hair_22_6: 466363972
+      Player_Hair_22_7: 1128234148
+      Player_Hair_22_8: 382202484
+      Player_Hair_22_9: 1009590795
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

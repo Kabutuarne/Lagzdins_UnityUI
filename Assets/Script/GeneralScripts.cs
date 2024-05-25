@@ -20,7 +20,10 @@ public class GeneralScripts : MonoBehaviour
     float newSizeX = currentScale.x - 0.4f;
     float newSizeY = currentScale.y - 0.4f;
     CharacterImg.transform.localScale = new Vector3(newSizeX, newSizeY, currentScale.z);
-    } 
     }
+    }
+
+    
+ 
 
 }

@@ -1,17 +1,22 @@
 using UnityEngine;
 using UnityEngine.UI;  
 
-public class RunningScript : MonoBehaviour
+public class RunningScriptHair : MonoBehaviour
 {
     
     private Sprite[] spritess;
-    private Sprtie[] sprites = new Sprites[13];
+    private Sprite[] sprites = new Sprite[13];
     public float changeInterval = 0.1f;
     public GameObject imageHolder;
     private float timer;
     private int currentSpriteIndex = 0;
     private bool enabled = true;
     private int hairIndex=1;
+    public int Spritez{
+        get{ return 0;}
+        set{changeSprites();}
+    }
+
     public bool Enabled{
             get { return enabled; }
             set { enabled = value; 
@@ -27,17 +32,11 @@ public class RunningScript : MonoBehaviour
     void Start()
     {
         spritess = Resources.LoadAll<Sprite>("CharResources/Hair/Player_Hair_"+hairIndex);
-            int i = 6;
-            int j = 0;
-        foreach (Sprite sprite in spritess)
-        {
-            if (sprite.name == "Player_"+i+"_"+i) // Japabeidz cuh
-            {
-                spritess[j] = sprite;
-                i++;
-                j++;
+            //int i = 5;
+            for(int j=0;j<13;j++){
+                sprites[j]=spritess[j];
             }
-        }
+            
     }
 
     void Update()
@@ -59,6 +58,13 @@ public class RunningScript : MonoBehaviour
             imageHolder.GetComponent<Image>().sprite = sprites[currentSpriteIndex];
         }
     }
+    }
+    private void changeSprites(){
+        spritess = Resources.LoadAll<Sprite>("CharResources/Hair/Player_Hair_"+hairIndex);
+            //int i = 5;
+            for(int j=0;j<13;j++){
+                sprites[j]=spritess[j];
+            }
     }
 }
         
