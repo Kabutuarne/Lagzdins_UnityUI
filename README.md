@@ -18,4 +18,4 @@
 ## Nākamās versijas funkcijas:
 - [ ] - Izveidot staigāšanas animāciju cloak
 - [ ] - Izveidot iespēju uzlikt bruņas un samainīt
-- [ ] - Salabot matu mainīšanos velkot character
+- [x] - Salabot matu mainīšanos velkot character
