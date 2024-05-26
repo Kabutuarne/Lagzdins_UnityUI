@@ -15,10 +15,20 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
     dragShirt,standUndershirt,dragUndershirt,dragHands,standHands,dragPants,standPants,standShoes,dragShoes;
     private RunningScript runningScript;
     private RunningScriptHair runningScriptHair;
+    private DragAndDrop dragAndDrop;
     private int selectedHairI=1;
+
     public int SelectedHairI{
         set{selectedHairI=value;}
         get{return selectedHairI;}
+    }
+    public Sprite DragHair{
+        set{dragHair=value;}
+        get{return dragHair;}
+    }
+    public Sprite StandHair{
+        set{standHair=value;}
+        get{return standHair;}
     }
     public GameObject OtherScriptHolder;
 
@@ -59,24 +69,28 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
 
     public void OnPointerDown(PointerEventData data)
     {
-        updateHair();
+
+        //updateHair();
         //Debug.Log("Izdarīts klikšis uz velkama objekta!");
     }
 
     public void OnBeginDrag(PointerEventData data)
     {   
-        //selectedHair = OtherScriptHolder.GetComponent<Image>().SelectedHairIndex;
         Hair.GetComponent<RunningScriptHair>().Spritez = 0;
+        selectedHairI = OtherScriptHolder.GetComponent<DragAndDrop>().SelectedHairI;
+        //dragHair = OtherScriptHolder.GetComponent<DragAndDrop>().DragHair;
         Debug.Log(selectedHairI+"testtt");
     }
     public void enableAnimation(bool value){
         //Debug.Log(value);
+        
         updateHair();
         Shirt.GetComponent<RunningScript>().Enabled = value;
         Head.GetComponent<RunningScript>().Enabled = value;
-
+        
         Hair.GetComponent<RunningScriptHair>().Enabled = value;
         Hair.GetComponent<RunningScriptHair>().Spritez = 0;
+        
         Pants.GetComponent<RunningScript>().Enabled = value;
         EyeWhites.GetComponent<RunningScript>().Enabled = value;
         Eye.GetComponent<RunningScript>().Enabled = value;
@@ -101,6 +115,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
     public void OnDrag(PointerEventData data)
     {
         enableAnimation(false);
+        Hair.GetComponent<RunningScriptHair>().Spritez = 0;
+        selectedHairI = OtherScriptHolder.GetComponent<DragAndDrop>().SelectedHairI;
         updateHair();
         Shirt.GetComponent<Image>().sprite = dragShirt;
         
@@ -135,7 +151,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
 
             Shirt.GetComponent<Image>().sprite = standShirt;
             Head.GetComponent<Image>().sprite = standHead;
-            Hair.GetComponent<Image>().sprite = standHair;
+            //Hair.GetComponent<Image>().sprite = standHair;
             Pants.GetComponent<Image>().sprite = standPants;
             Undershirt.GetComponent<Image>().sprite = standUndershirt;
             Eye.GetComponent<Image>().sprite = standEye;

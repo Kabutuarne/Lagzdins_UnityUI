@@ -23372,12 +23372,12 @@ RectTransform:
   m_Children:
   - {fileID: 1795640981}
   - {fileID: 1618609066}
-  - {fileID: 1249148836}
   - {fileID: 1719570553}
   - {fileID: 918745620}
   - {fileID: 1455013672}
   - {fileID: 1712278489}
   - {fileID: 1003582661}
+  - {fileID: 1249148836}
   - {fileID: 195403954}
   m_Father: {fileID: 1936393244}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23409,7 +23409,7 @@ MonoBehaviour:
   Shoes: {fileID: 195403953}
   ToggleButton: {fileID: 412472685}
   canv: {fileID: 1936393247}
-  OtherScriptHolder: {fileID: 0}
+  OtherScriptHolder: {fileID: 1391981363}
   minX: -135
   maxX: 135
   minY: -75
