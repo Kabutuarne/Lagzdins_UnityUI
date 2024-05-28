@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;  
 
-public class RunningScriptHair : MonoBehaviour
+public class RunningScriptChestArmor : MonoBehaviour
 {
     
     private Sprite[] spritess;
@@ -11,7 +11,7 @@ public class RunningScriptHair : MonoBehaviour
     private float timer;
     private int currentSpriteIndex = 0;
     private bool enabled = true;
-    private int hairIndex=1;
+    private int chestIndex=1;
     public int Spritez{
         get{return 0;}
         set{changeSprites();}
@@ -23,18 +23,19 @@ public class RunningScriptHair : MonoBehaviour
                 currentSpriteIndex = 0;
                     } 
         }
-        public int HairIndex{
-            get { return hairIndex; }
-            set { hairIndex = value; 
+        public int ChestIndex{
+            get { return chestIndex; }
+            set { chestIndex = value; 
                 currentSpriteIndex = 0;
                     } 
         }
     void Start()
     {
-        spritess = Resources.LoadAll<Sprite>("CharResources/Hair/Player_Hair_"+hairIndex);
-            //int i = 5;
-            for(int j=0;j<13;j++){
-                sprites[j]=spritess[j];
+        spritess = Resources.LoadAll<Sprite>("CharResources/Armor/ArmorBody/Armor_Body_"+chestIndex);
+            int i=0;
+            for(int j=6;j<=18;j++){
+                sprites[i]=spritess[j];
+                i++;
             }
             
     }
@@ -60,10 +61,11 @@ public class RunningScriptHair : MonoBehaviour
     }
     }
     private void changeSprites(){
-        spritess = Resources.LoadAll<Sprite>("CharResources/Hair/Player_Hair_"+hairIndex);
-            //int i = 5;
-            for(int j=0;j<13;j++){
-                sprites[j]=spritess[j];
+        spritess = Resources.LoadAll<Sprite>("CharResources/Armor/ArmorBody/Armor_Body_"+chestIndex);
+            int i=0;
+            for(int j=6;j<=18;j++){
+                sprites[i]=spritess[j];
+                i++;
             }
     }
 }
